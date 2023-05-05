@@ -1,11 +1,10 @@
-
 def merge_sort(array)
   if array.length <= 1
-    return array
+    array
   else
-    left = merge_sort(array[0...array.length/2])
-    right = merge_sort(array[array.length/2..-1])
-    return merge(left, right)
+    left = merge_sort(array[0...array.length / 2])
+    right = merge_sort(array[array.length / 2..])
+    merge(left, right)
   end
 end
 
@@ -19,7 +18,6 @@ def merge(left, right, merged = [])
   end
   merged + left + right
 end
-
 
 arr = []
 50.times do
